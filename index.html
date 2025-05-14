@@ -10,21 +10,38 @@
 
 <body>
     <header>
-        <h1>Coin Collector </h1>
+        <h1>Coin Collector <img src="images/coin.jpg" alt="Coin" class="header-icon"></h1>
     </header>
 
     <main>
         <section id="currencies">
-            <p>Coins: <span id="coinCount">0</span></p>
-            <p>Rubies: <span id="rubyCount">0</span></p>
-            <p>Coin Generation Rate: <span id="coinRate">100</span> coins/sec</p>
-            <p>Ruby Generation Rate: <span id="rubyRate">1</span> per minute</p>
+            <div class="currency-display">
+                <img src="images/coin.jpg" alt="Coin" class="currency-icon">
+                <p>Coins: <span id="coinCount">0</span></p>
+            </div>
+            <div class="currency-display">
+                <img src="images/ruby.png" alt="Ruby" class="currency-icon">
+                <p>Rubies: <span id="rubyCount">0</span></p>
+            </div>
+            <div class="rate-display">
+                <p><img src="images/coin.jpg" alt="Coin" class="rate-icon"> Generation: <span id="coinRate">100</span>/sec</p>
+                <p><img src="images/ruby.png" alt="Ruby" class="rate-icon"> Generation: <span id="rubyRate">1</span>/sec</p>
+            </div>
         </section>
 
-        <section>
-            <button id="collect">Collect Coins</button>
-            <button id="booster">Activate Booster (Cost: 10 rubies)</button>
-            <button id="upgrade">Buy Upgrade (Cost: 500 Coins)</button>
+        <section class="actions">
+            <button id="collect" class="action-button">
+                <img src="images/coin.jpg" alt="Coin" class="button-icon">
+                Collect Coins (+10)
+            </button>
+            <button id="booster" class="action-button">
+                <img src="images/ruby.png" alt="Ruby" class="button-icon">
+                Activate Booster (200 rubies)
+            </button>
+            <button id="upgrade" class="action-button">
+                <img src="images/upgrade.jpg" alt="Upgrade" class="button-icon">
+                Buy Upgrade (<span id="upgradeCost"></span>)
+            </button>
             <p>Upgrades Owned: <span id="upgradeCount">0</span></p>
         </section>
     </main>
@@ -34,6 +51,7 @@
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>

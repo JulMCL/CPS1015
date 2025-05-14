@@ -25,6 +25,7 @@ fetch("http://localhost:8000/load")
     upgradeCount = data.upgradeCount || 0;
     baseRate = data.baseRate || 100;
     rubyRate = data.rubyRate || 1;
+    console.log("Loaded rubyRate:", rubyRate);
     upgradeCost = 500 * Math.pow(1.5, upgradeCount);
     updateUI();
   })
@@ -32,16 +33,17 @@ fetch("http://localhost:8000/load")
     console.error("Failed to load data:", err);
   });
 
-//automatic goin generator
+//automatic coin and ruby generator
 setInterval(() => {
     coins += baseRate;
+    rubies += rubyRate;
     updateUI();
-}, 1000); //gives coins automatically every second
+}, 1000); //gives coins and rubies automatically every second
 
 //button to activate booster
 booster.addEventListener("click", () => {
-    if(rubies >= 10 && !boostActive) {
-        rubies -= 10;
+    if(rubies >= 200 && !boostActive) {
+        rubies -= 200;
         baseRate *=3;
         boostActive = true;
         updateUI();
@@ -53,7 +55,7 @@ booster.addEventListener("click", () => {
             baseRate /= 3; //setting base rate to normal after booster ends
             boostActive = false;
             booster.disabled = false;
-            booster.textContent = "Activate Booster (for 10 rubies)";
+            booster.textContent = "Activate Booster (for 200 rubies)";
             updateUI();
         }, 10000); //booster lasts for 10 seconds
     }
@@ -79,18 +81,13 @@ collect.addEventListener("click", () => {
     setTimeout(() => collect.classList.remove("click-feedback"), 100);
 });
 
-//earn rubies every minute
-setInterval(() => {
-    rubies += rubyRate;
-    updateUI();
-}, 60000) //automatically gives a ruby each minute
-
 function updateUI() {
     coinCount.textContent = Math.floor(coins);
     rubyCount.textContent = rubies;
     coinRate.textContent = baseRate;
     rubyRateElement.textContent = rubyRate
-    upgradeCountElement.textContent = `Buy Upgrade for ${upgradeCost} Coins`;
+    upgradeCountElement.textContent = upgradeCount;
+    document.getElementById("upgradeCost").textContent = upgradeCost;
 }
 
 function saveGame() {
