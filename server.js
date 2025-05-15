@@ -15,7 +15,13 @@ const defaultData = {
   rubies: 0, 
   upgradeCount: 0, 
   baseRate: 100,
-  rubyRate: 1
+  rubyRate: 1,
+  shopItems: [
+    {id: 1, name: "Golden Hat", cost: 5000, coinsPerSec: 5, owned: 0},
+    {id: 2, name: "Cat Companion", cost: 7500, coinsPerSec: 0, owned: 0},
+    {id: 3, name: "Treasure Chest", cost: 50000, coinsPerSec: 30, owned: 0},
+    {id: 4, name: "Pickaxe", cost: 15000, coinsPerSec: 0, owned: 0}
+  ]
 };
 
 //load game data

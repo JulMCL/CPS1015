@@ -14,6 +14,7 @@
     </header>
 
     <main>
+        <!--this part shows the amount of currencies that the user owns-->
         <section id="currencies">
             <div class="currency-display">
                 <img src="images/coin.jpg" alt="Coin" class="currency-icon">
@@ -23,6 +24,7 @@
                 <img src="images/ruby.png" alt="Ruby" class="currency-icon">
                 <p>Rubies: <span id="rubyCount">0</span></p>
             </div>
+            <!--displays rate of currency generation, respectively-->
             <div class="rate-display">
                 <p><img src="images/coin.jpg" alt="Coin" class="rate-icon"> Generation: <span id="coinRate">100</span>/sec</p>
                 <p><img src="images/ruby.png" alt="Ruby" class="rate-icon"> Generation: <span id="rubyRate">1</span>/sec</p>
@@ -30,19 +32,69 @@
         </section>
 
         <section class="actions">
+            <!--displays button which allows user to manually obtain coins-->
             <button id="collect" class="action-button">
                 <img src="images/coin.jpg" alt="Coin" class="button-icon">
                 Collect Coins (+10)
             </button>
+            <!--displays button that boosts coin generation for a period of time-->
             <button id="booster" class="action-button">
                 <img src="images/ruby.png" alt="Ruby" class="button-icon">
                 Activate Booster (200 rubies)
             </button>
+            <!--displays button that upgrades coin generation rate-->
             <button id="upgrade" class="action-button">
                 <img src="images/upgrade.jpg" alt="Upgrade" class="button-icon">
-                Buy Upgrade (<span id="upgradeCost"></span>)
+                Buy Upgrade (<span id="upgradeCost">500</span>coins)
             </button>
             <p>Upgrades Owned: <span id="upgradeCount">0</span></p>
+        </section>
+
+        <!--implementing the shop-->
+        <section id="shop" class="shop-section">
+            <h2>Shop</h2>
+            <div class="shop-items">
+                <!--first item, a golden hat-->
+                <div class="shop-item" id="item1">
+                    <img src="images/hat.png" alt="Golden Hat" class="shop-icon">
+                    <h3>Golden Hat</h3>
+                    <p>+5 coins/sec</p>
+                    <p>Owned: <span class="owned1">0</span></p>
+                    <button class="buy-button" data-item="1">
+                        Buy (<span class="cost1">5000</span> coins)
+                    </button>
+                </div>
+                <!--second item: a pet-->
+                <div class="shop-item" id="item2">
+                    <img src="images/cat.jpg" alt="Cat Companion" class="shop-icon">
+                    <h3>Cat</h3>
+                    <p>+0 coins/sec</p>
+                    <p>Owned: <span class="owned2">0</span></p>
+                    <button class="buy-button" data-item="2">
+                        Buy (<span class="cost2">7500</span> coins)
+                    </button>
+                </div>
+                <!--third item, a treasure chest-->
+                <div class="shop-item" id="item3">
+                    <img src="images/treasurechest.png" alt="Treasure Chest" class="shop-icon">
+                    <h3>Treasure Chest</h3>
+                    <p>+30 coins/sec</p>
+                    <p>Owned: <span class="owned3">0</span></p>
+                    <button class="buy-button" data-item="3">
+                        Buy (<span class="cost3">50000</span> coins)
+                    </button>
+                </div>
+                <!--fourth item, a pickaxe-->
+                <div class="shop-item" id="item4">
+                    <img src="images/pickaxe.png" alt="Pickaxe" class="shop-icon">
+                    <h3>Pickaxe</h3>
+                    <p>+0 coins/sec</p>
+                    <p>Owned: <span class="owned4">0</span></p>
+                    <button class="buy-button" data-item="4">
+                        Buy (<span class="cost4">15000</span> coins)
+                    </button>
+                </div>
+            </div>
         </section>
     </main>
 
