@@ -25,6 +25,7 @@ const defaultData = {
 };
 
 //load game data
+app.use(cors());
 app.get("/load", (req, res) => {
     if(fs.existsSync(coinData)) {
         const data = fs.readFileSync(coinData, "utf-8");
@@ -40,6 +41,8 @@ app.post("/save", (req, res) => {
     fs.writeFileSync(coinData, JSON.stringify(data, null, 2));
     res.json({ message: "Game is saved"});
 });
+
+app.use(express.static(path.join(__dirname, '../WebDev')));
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

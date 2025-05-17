@@ -118,7 +118,9 @@ main{
     width: 20px;
     height: 20px;
 }
-
+.upgradebuycost{
+    margin-left: -7.5px;
+}
 .click-feedback{
     transform: scale(0.95);
     background-color: #ffeb3b;

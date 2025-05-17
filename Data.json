@@ -1,7 +1,37 @@
 {
-  "coins": 34000,
-  "rubies": 20,
-  "upgradeCount": 0,
-  "baseRate": 100,
-  "rubyRate": 1
+  "coins": 44506,
+  "rubies": 5642,
+  "upgradeCount": 2,
+  "baseRate": 150,
+  "rubyRate": 1,
+  "shopItems": [
+    {
+      "id": 1,
+      "name": "Golden Hat",
+      "cost": 5000,
+      "coinsPerSec": 5,
+      "owned": 0
+    },
+    {
+      "id": 2,
+      "name": "Cat Companion",
+      "cost": 10800,
+      "coinsPerSec": 0,
+      "owned": 2
+    },
+    {
+      "id": 3,
+      "name": "Treasure Chest",
+      "cost": 60000,
+      "coinsPerSec": 30,
+      "owned": 1
+    },
+    {
+      "id": 4,
+      "name": "Pickaxe",
+      "cost": 37324,
+      "coinsPerSec": 0,
+      "owned": 5
+    }
+  ]
 }

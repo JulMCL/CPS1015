@@ -8,10 +8,10 @@ let boostActive = false;
 
 //list of shop items, their cost and attributes
 let shopItems = [
-  {id: 1, name: "Golden Hat", cost: 5000, coinsPerSec: 5, owned: 0},
-  {id: 2, name: "Cat Companion", cost: 7500, coinsPerSec: 0, owned: 0},
-  {id: 3, name: "Treasure Chest", cost: 50000, coinsPerSec: 30, owned: 0},
-  {id: 4, name: "Pickaxe", cost: 15000, coinsPerSec: 0, owned: 0}
+  {id: 1, name: "Golden Hat", cost: 500, coinsPerSec: 5, owned: 0},
+  {id: 2, name: "Cat Companion", cost: 750, coinsPerSec: 0, owned: 0},
+  {id: 3, name: "Treasure Chest", cost: 5000, coinsPerSec: 30, owned: 0},
+  {id: 4, name: "Pickaxe", cost: 1500, coinsPerSec: 0, owned: 0}
 ];
 
 //list of achievements
@@ -102,7 +102,7 @@ upgrade.addEventListener("click", () => {
         coins -= upgradeCost;
         upgradeCount++;
         baseRate += 10;
-        upgradeCost = Math.floor(upgradeCost*1.5); //increase in cost of next upgrade
+        upgradeCost = parseFloat(Math.floor(upgradeCost*1.5)); //increase in cost of next upgrade
         updateUI();
     }
 })
