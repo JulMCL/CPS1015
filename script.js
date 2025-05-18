@@ -18,7 +18,7 @@ let shopItems = [
 let achievements = {
   cats: {required: 10, progress: 0, completed: false},
   chests: {required: 5, progress: 0, completed: false},
-  coins: {required: 100000, progress: 0, completed: false},
+  coins: {required: 10000, progress: 0, completed: false},
   hats: {required: 3, progress: 0, completed: false},
   pickaxes: {required: 15, progress: 0, completed: false}
 };
@@ -102,7 +102,7 @@ upgrade.addEventListener("click", () => {
         coins -= upgradeCost;
         upgradeCount++;
         baseRate += 10;
-        upgradeCost = parseFloat(Math.floor(upgradeCost*1.5)); //increase in cost of next upgrade
+        upgradeCost = Math.floor(upgradeCost*1.5); //increase in cost of next upgrade
         updateUI();
     }
 })
