@@ -76,7 +76,7 @@ setInterval(() => {
 booster.addEventListener("click", () => {
     if(rubies >= 200 && !boostActive){
         rubies -= 200; //cost of activating booster
-        baseRate *=3; //booster is applied here
+        baseRate = Math.floor(baseRate*3); //booster is applied here
         boostActive = true;
         updateUI();
 
@@ -84,7 +84,7 @@ booster.addEventListener("click", () => {
         booster.textContent = "Booster is active!";
 
         setTimeout(() => {
-            baseRate /= 3; //setting base rate to normal after booster ends
+            baseRate = Math.floor(baseRate/3); //setting base rate to normal after booster ends
             boostActive = false;
             booster.disabled = false;
             booster.innerHTML = `
@@ -202,7 +202,7 @@ function updateAchievementsUI(){
       
       // Update progress text
       if(key === 'coins'){
-          progressElement.textContent = `${Math.min(achievement.progress, achievement.required)}/${achievement.required}`;
+          progressElement.textContent = `${Math.floor(Math.min(achievement.progress, achievement.required))}/${achievement.required}`;
       }else{
           progressElement.textContent = `${achievement.progress}/${achievement.required}`;
       }
